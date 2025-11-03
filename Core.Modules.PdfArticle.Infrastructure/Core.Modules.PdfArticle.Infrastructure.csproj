@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" Version="2024.10.3" />
+    <PackageReference Include="itext" Version="8.0.5" />
+    <PackageReference Include="itext.bouncy-castle-adapter" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Modules.PdfArticle.Domain\Core.Modules.PdfArticle.Domain.csproj" />
+    <ProjectReference Include="..\Core.Modules.PdfArticle.Infrastructure.Interfaces\Core.Modules.PdfArticle.Infrastructure.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
