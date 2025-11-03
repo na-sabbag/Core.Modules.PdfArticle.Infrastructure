@@ -16,8 +16,8 @@ namespace Core.Modules.PdfArticle.Infrastructure
     public class PdfArticleAdapter : IPdfArticleAdapter
     {
         private Document _document = null!;
-        private PdfArticleViewModel _pdfArticleModel;
-        private MemoryStream _memoryStream;
+        private PdfArticleViewModel _pdfArticleModel = null!;
+        private MemoryStream _memoryStream = null!;
         private bool _disposed = false;
         public void AddTitle(string title)
         {

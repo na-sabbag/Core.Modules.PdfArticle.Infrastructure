@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo ao leaders.tec.br</h1>
+    <p class="lead">Plataforma Open Source para geração de artigos técnicos em PDF</p>
+    
+    <div class="mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3><i class="bi bi-file-pdf-fill text-danger"></i> Gerador de PDF</h3>
+                        <p>Crie artigos técnicos profissionais em formato PDF de forma rápida e fácil.</p>
+                        <a asp-controller="Pdf" asp-action="Index" class="btn btn-primary btn-lg">
+                            Começar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h4>Sobre o Projeto</h4>
+        <p>
+            Este é um projeto open source criado para compartilhar conhecimento com a comunidade tech brasileira.
+            Utilizando o módulo <code>Core.Modules.PdfArticle.Infrastructure</code>, oferecemos uma solução
+            completa e modular para geração de documentos PDF.
+        </p>
+    </div>
+</div>

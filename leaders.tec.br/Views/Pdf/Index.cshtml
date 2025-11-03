@@ -1,0 +1,91 @@
+@{
+    ViewData["Title"] = "Gerador de PDF - Artigos";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">
+                        <i class="bi bi-file-pdf"></i> Gerador de Artigos PDF
+                    </h2>
+                </div>
+                <div class="card-body">
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Erro!</strong> @TempData["Error"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="Generate" method="post">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Título do Artigo</label>
+                            <input type="text" class="form-control" id="title" name="title" 
+                                   placeholder="Digite o título do seu artigo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Autor</label>
+                            <input type="text" class="form-control" id="author" name="author" 
+                                   placeholder="Digite o nome do autor" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Conteúdo do Artigo</label>
+                            <textarea class="form-control" id="content" name="content" rows="10" 
+                                      placeholder="Digite o conteúdo do seu artigo..." required></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-download"></i> Gerar PDF
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    <small>
+                        Powered by <strong>leaders.tec.br</strong> - Projeto Open Source
+                    </small>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="alert alert-info">
+                    <h5><i class="bi bi-info-circle"></i> Sobre este projeto</h5>
+                    <p class="mb-0">
+                        Este é um projeto open source desenvolvido para compartilhar conhecimento com a comunidade tech.
+                        O módulo <code>Core.Modules.PdfArticle.Infrastructure</code> permite a geração de artigos em PDF
+                        de forma simples e eficiente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card {
+            border: none;
+            border-radius: 15px;
+        }
+        .card-header {
+            border-radius: 15px 15px 0 0 !important;
+            padding: 20px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+}
+
